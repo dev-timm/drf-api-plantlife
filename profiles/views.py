@@ -8,7 +8,7 @@ from drf_api_plantlife.permissions import IsOwnerOrReadOnly
 
 
 class ProfileList(APIView):
-    def get(seld, request):
+    def get(self, request):
         profiles = Profile.objects.all()
         serializer = ProfileSerializer(
             profiles, many=True, context={'request': request}
