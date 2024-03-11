@@ -1,6 +1,7 @@
 from rest_framework import serializers
 from .models import Comments
 
+
 class CommentSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
@@ -16,3 +17,7 @@ class CommentSerializer(serializers.ModelSerializer):
         fields = [
             'id', 'owner', 'post', 'content', 'created_on', 'updated_on', 'is_owner', 'profile_id', 'profile_image'
         ]
+
+
+class CommentDetailSerializer(CommentSerializer):
+    post = serializers.ReadOnlyField(source='post.id')
