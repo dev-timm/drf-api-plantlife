@@ -8,6 +8,8 @@ class PostSerializer(serializers.ModelSerializer):
     profile_id = serializers.ReadOnlyField(source='owner.profile.id')
     profile_image = serializers.ReadOnlyField(source='owner.profile.profile_image.url')
     like_id = serializers.SerializerMethodField()
+    comments_count = serializers.ReadOnlyField()
+    likes_count = serializers.ReadOnlyField()
 
     def validate_post_image(self, value):
         if value.size > 1024 * 1024 * 2:
@@ -41,5 +43,6 @@ class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
         fields = [
-            'id', 'owner', 'title', 'content', 'post_image', 'image_filter', 'created_on', 'updated_on', 'is_owner', 'profile_id', 'profile_image', 'like_id'
+            'id', 'owner', 'title', 'content', 'post_image', 'image_filter', 'created_on', 'updated_on', 
+            'is_owner', 'profile_id', 'profile_image', 'like_id', 'comments_count', 'likes_count'
         ]
