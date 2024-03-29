@@ -63,6 +63,7 @@ DEBUG = 'DEV' in os.environ
 
 ALLOWED_HOSTS = ['8000-devtimm-drfapiplantlife-xulro5ienqh.ws-eu110.gitpod.io', os.environ.get('ALLOWED_HOST')]
 
+CSRF_TRUSTED_ORIGINS = ['https://8000-devtimm-drfapiplantlife-xulro5ienqh.ws-eu110.gitpod.io']
 
 # Application definition
 
