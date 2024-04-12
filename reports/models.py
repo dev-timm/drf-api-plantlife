@@ -18,6 +18,7 @@ class Report(models.Model):
 
     class Meta:
         ordering = ['-created_on']
+        unique_together = ['owner', 'post']
 
     def __str__(self):
         return self.report_reason
