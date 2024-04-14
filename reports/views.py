@@ -9,6 +9,13 @@ class ReportList(generics.ListCreateAPIView):
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Report.objects.all()
 
+    # disable default pagination
+    # https://stackoverflow.com/questions/52474430/disable-pagination-when-not-requesting-any-page-in-djangorestframework
+    def paginate_queryset(self, queryset):
+        if self.paginator and self.request.query_params.get(self.paginator.page_query_param, None) is None:
+            return None
+        return super().paginate_queryset(queryset)
+
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
