@@ -2,17 +2,14 @@ from django.db.models import Count
 from rest_framework import generics, permissions, filters
 from django_filters.rest_framework import DjangoFilterBackend
 from drf_api_plantlife.permissions import IsOwnerOrReadOnly
-from .models import Post
-from .serializers import PostSerializer
+from .models import Advertisement
+from .serializers import AdvertisementSerializer
 
 
-class PostList(generics.ListCreateAPIView):
-    serializer_class = PostSerializer
+class AdvertisementList(generics.ListCreateAPIView):
+    serializer_class = AdvertisementSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
-    queryset = Post.objects.annotate(
-        comments_count=Count('comment', distinct=True),
-        likes_count=Count('likes', distinct=True),
-    ).order_by('-created_on')
+    queryset = Advertisement.objects.all()
     filter_backends = [
         filters.OrderingFilter,
         filters.SearchFilter,
@@ -20,28 +17,23 @@ class PostList(generics.ListCreateAPIView):
     ]
     filterset_fields = [
         'owner__followed__owner__profile',
-        'likes__owner__profile',
         'owner__profile'
     ]
     search_fields = [
         'owner__username',
-        'title'
+        'title',
+        'plant_type'
     ]
     ordering_fields = [
-        'comments_count',
-        'likes_count',
-        'likes__created_on'
+        'created_on',
+        'price'
     ]
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
 
-class PostDetail(generics.RetrieveUpdateDestroyAPIView):
-    serializer_class = PostSerializer
+class AdvertisementDetail(generics.RetrieveUpdateDestroyAPIView):
+    serializer_class = AdvertisementSerializer
     permission_classes = [IsOwnerOrReadOnly]
-    queryset = Post.objects.annotate(
-        comments_count=Count('comment', distinct=True),
-        likes_count=Count('likes', distinct=True),
-    ).order_by('-created_on')
-
+    queryset = Advertisement.objects.all()
