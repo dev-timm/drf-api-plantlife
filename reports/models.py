@@ -12,7 +12,7 @@ class Report(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, related_name='reports', on_delete=models.CASCADE)
     report_reason = models.CharField(
-        max_length=32, choices=report_reason_choices, default='Offensive Content'
+        max_length=32, choices=report_reason_choices, default='offensive_content'
     )
     created_on = models.DateTimeField(auto_now_add=True)
 

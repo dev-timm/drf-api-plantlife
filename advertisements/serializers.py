@@ -31,6 +31,6 @@ class AdvertisementSerializer(serializers.ModelSerializer):
     class Meta:
         model = Advertisement
         fields = [
-            'id', 'owner', 'title', 'plant_type', 'is_available', 'is_for_free', 'price', 'contact', 'content', 'ad_image', 'created_on', 'updated_on', 
+            'id', 'owner', 'title', 'plant_type', 'availability', 'price', 'contact', 'content', 'ad_image', 'created_on', 'updated_on', 
             'is_owner', 'profile_id', 'profile_image'
         ]

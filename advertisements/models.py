@@ -3,11 +3,17 @@ from django.contrib.auth.models import User
 
 
 class Advertisement(models.Model):
+    availability_choices = [
+        ('available', 'Available'),
+        ('not_available', 'Not Available'),
+        ('reserved', 'Reserved')
+    ]
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=40)
     plant_type = models.CharField(max_length=30)
-    is_available = models.BooleanField(default=True)
-    is_for_free = models.BooleanField(default=False)
+    availability = models.CharField(
+        max_length=32, choices=availability_choices, default='available'
+    )
     price = models.DecimalField(max_digits=6, decimal_places=2, default=0.00)
     contact = models.CharField(max_length=40)
     content = models.TextField(blank=True, max_length=280)
