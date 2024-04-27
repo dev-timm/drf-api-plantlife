@@ -12,6 +12,7 @@ class PostList(generics.ListCreateAPIView):
     queryset = Post.objects.annotate(
         comments_count=Count('comment', distinct=True),
         likes_count=Count('likes', distinct=True),
+        bookmarks_count=Count('bookmarks', distinct=True)
     ).order_by('-created_on')
     filter_backends = [
         filters.OrderingFilter,
@@ -21,6 +22,7 @@ class PostList(generics.ListCreateAPIView):
     filterset_fields = [
         'owner__followed__owner__profile',
         'likes__owner__profile',
+        'bookmarks__owner__profile',
         'owner__profile'
     ]
     search_fields = [
@@ -30,6 +32,7 @@ class PostList(generics.ListCreateAPIView):
     ordering_fields = [
         'comments_count',
         'likes_count',
+        'bookmarks__created_on',
         'likes__created_on'
     ]
 
@@ -43,5 +46,6 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     queryset = Post.objects.annotate(
         comments_count=Count('comment', distinct=True),
         likes_count=Count('likes', distinct=True),
+        bookmarks_count=Count('bookmarks', distinct=True)
     ).order_by('-created_on')
 
