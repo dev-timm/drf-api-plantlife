@@ -17,4 +17,3 @@ class FollowerDetail(generics.RetrieveDestroyAPIView):
     serializer_class = FollowerSerializer
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Follower.objects.all()
-

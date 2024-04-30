@@ -3,6 +3,7 @@ from .models import Post
 from likes.models import Like
 from bookmarks.models import Bookmark
 
+
 class PostSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
@@ -50,10 +51,10 @@ class PostSerializer(serializers.ModelSerializer):
             return bookmark.id if bookmark else None
         return None
 
-        
     class Meta:
         model = Post
         fields = [
-            'id', 'owner', 'title', 'content', 'post_image', 'created_on', 'updated_on', 
-            'is_owner', 'profile_id', 'profile_image', 'like_id', 'comments_count', 'likes_count', 'bookmark_id'
+            'id', 'owner', 'title', 'content', 'post_image', 'created_on', 'updated_on',
+            'is_owner', 'profile_id', 'profile_image', 'like_id', 'comments_count',
+            'likes_count', 'bookmark_id'
         ]

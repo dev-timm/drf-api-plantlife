@@ -2,6 +2,7 @@ from rest_framework import serializers
 from .models import Profile
 from followers.models import Follower
 
+
 class ProfileSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     is_owner = serializers.SerializerMethodField()
@@ -22,10 +23,11 @@ class ProfileSerializer(serializers.ModelSerializer):
             ).first()
             return following.id if following else None
         return None
-        
+
     class Meta:
         model = Profile
         fields = [
-            'id', 'owner', 'full_name', 'bio', 'profile_image', 'created_on', 'updated_on', 'is_owner', 'following_id',
-            'posts_count', 'followers_count', 'following_count'
+            'id', 'owner', 'full_name', 'bio', 'profile_image', 'created_on',
+            'updated_on', 'is_owner', 'following_id', 'posts_count',
+            'followers_count', 'following_count'
         ]

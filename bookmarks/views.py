@@ -12,8 +12,8 @@ class BookmarkList(generics.ListCreateAPIView):
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
 
+
 class BookmarkDetail(generics.RetrieveDestroyAPIView):
     serializer_class = BookmarkSerializer
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Bookmark.objects.all()
-

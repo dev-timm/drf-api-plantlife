@@ -8,7 +8,6 @@ class ReportSerializer(serializers.ModelSerializer):
     owner = serializers.ReadOnlyField(source='owner.username')
     created_on = serializers.SerializerMethodField()
 
-
     def get_created_on(self, obj):
         return naturaltime(obj.created_on)
 
