@@ -141,3 +141,9 @@ Additionally, the following platforms and tools were used while working on the p
 5. Open your IDE.
 6. Type  ```git clone <copied URL>``` into the terminal.
 7. If everything's done right, you should now see a cloned repository in your IDE.
+
+
+## Thank You
+
+- to my mentor Gareth for supporting me with his feedback throughout the entire project
+- to my wife Valentina for making sure I always get the time and anything else I need for working on this course and projects
