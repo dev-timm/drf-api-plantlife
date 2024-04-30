@@ -100,3 +100,20 @@ The User model is directly related to the Profile, Follower, Advertisement, Book
 | Admin | Visit /admin | See admin sign in screen | Pass
 | Admin | Add wrong admin credentials| Error message that credentials must be correct | Pass
 | Admin | Add correct credentials | Sign in to admin | Pass
+
+
+## Technologies Used
+
+PlantLife DRF API project mainly relies on:
+
+- [Python](https://en.wikipedia.org/wiki/Python_(programming_language))
+- [Django](https://www.djangoproject.com/)
+- [Heroku](https://www.heroku.com/)
+- [ElephantSQL](https://www.elephantsql.com/)
+- [Cloudinary](https://cloudinary.com/)
+- [Git](https://git-scm.com/)
+
+Additionally, the following platforms and tools were used while working on the project:
+
+- [Gitpod](https://gitpod.io/)
+- [GitHub](https://github.com/)
