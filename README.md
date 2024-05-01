@@ -14,6 +14,16 @@ The User model is directly related to the Profile, Follower, Advertisement, Book
 
 ## Testing
 
+### Validation
+The API was tested with Code Institute’s own [Python Linter](https://pep8ci.herokuapp.com/) and no significant issues were found.
+
+### Tested Devices & Browsers
+- Macbook Pro
+    - Chrome
+    - Safari
+    - Firefox
+
+
 ### Feature Testing
 
 #### Deployed API
@@ -127,7 +137,14 @@ Additionally, the following platforms and tools were used while working on the p
 2. Click on the top right button “New” and select “Create new app”.
 3. Enter app name and choose your region.
 4. Click on the “Create app” button.
-5. Go to “Settings” and add config vars (if necessary) and buildpacks.
+5. Go to “Settings” and add config vars and buildpacks.
+    1. ALLOWED_HOST
+    2. CLIENT_ORIGIN
+    3. CLIENT_ORIGIN_DEV
+    4. CLOUDINARY_URL
+    5. DATABASE_URL
+    6. SECRET_KEY
+    7. heroku/python (buildpack)
 6. Go to “Deploy” section and connect to your GitHub account.
 7. Decide between automatic or manual deployment and click on the corresponding button.
 8. If the build is completed successfully, you should see a button to view the deployed API.
@@ -141,6 +158,12 @@ Additionally, the following platforms and tools were used while working on the p
 5. Open your IDE.
 6. Type  ```git clone <copied URL>``` into the terminal.
 7. If everything's done right, you should now see a cloned repository in your IDE.
+
+## Credits
+
+Solutions that helped me with:
+
+- [Disabling default pagination for reports](https://stackoverflow.com/questions/52474430/disable-pagination-when-not-requesting-any-page-in-djangorestframework)
 
 
 ## Thank You
