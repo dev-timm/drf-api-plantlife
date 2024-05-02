@@ -8,7 +8,7 @@ from .serializers import ProfileSerializer
 
 class ProfileList(generics.ListCreateAPIView):
     """
-    A view to list and create profiles
+    A view to list and create profiles.
     """
 
     serializer_class = ProfileSerializer
@@ -40,7 +40,7 @@ class ProfileList(generics.ListCreateAPIView):
 
 class ProfileDetail(generics.RetrieveUpdateAPIView):
     """
-    A view to retrieve and update profiles
+    A view to retrieve and update profiles.
     """
 
     serializer_class = ProfileSerializer

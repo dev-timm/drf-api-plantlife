@@ -6,7 +6,7 @@ from .serializers import ReportSerializer
 
 class ReportList(generics.ListCreateAPIView):
     """
-    A view to list and create reports
+    A view to list and create reports.
     """
 
     serializer_class = ReportSerializer
@@ -26,7 +26,7 @@ class ReportList(generics.ListCreateAPIView):
 
 class ReportDetail(generics.RetrieveDestroyAPIView):
     """
-    A view to retrieve and delete reports
+    A view to retrieve and delete reports.
     """
 
     serializer_class = ReportSerializer

@@ -6,7 +6,7 @@ from .serializers import FollowerSerializer
 
 class FollowerList(generics.ListCreateAPIView):
     """
-    A view to list and create followers
+    A view to list and create followers.
     """
 
     serializer_class = FollowerSerializer
@@ -19,7 +19,7 @@ class FollowerList(generics.ListCreateAPIView):
 
 class FollowerDetail(generics.RetrieveDestroyAPIView):
     """
-    A view to retrieve and delete followers
+    A view to retrieve and delete followers.
     """
 
     serializer_class = FollowerSerializer

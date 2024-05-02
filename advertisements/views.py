@@ -8,7 +8,7 @@ from .serializers import AdvertisementSerializer
 
 class AdvertisementList(generics.ListCreateAPIView):
     """
-    A view to list and create advertisements
+    A view to list and create advertisements.
     """
 
     serializer_class = AdvertisementSerializer
@@ -39,7 +39,7 @@ class AdvertisementList(generics.ListCreateAPIView):
 
 class AdvertisementDetail(generics.RetrieveUpdateDestroyAPIView):
     """
-    A view to retrieve, update and delete advertisements
+    A view to retrieve, update and delete advertisements.
     """
 
     serializer_class = AdvertisementSerializer

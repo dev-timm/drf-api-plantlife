@@ -8,7 +8,7 @@ from .serializers import PostSerializer
 
 class PostList(generics.ListCreateAPIView):
     """
-    A view to list and create posts
+    A view to list and create posts.
     """
 
     serializer_class = PostSerializer
@@ -45,7 +45,7 @@ class PostList(generics.ListCreateAPIView):
 
 class PostDetail(generics.RetrieveUpdateDestroyAPIView):
     """
-    A view to retrieve, update and delete posts
+    A view to retrieve, update and delete posts.
     """
 
     serializer_class = PostSerializer

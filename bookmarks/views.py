@@ -6,7 +6,7 @@ from .serializers import BookmarkSerializer
 
 class BookmarkList(generics.ListCreateAPIView):
     """
-    A view to list and create bookmarks
+    A view to list and create bookmarks.
     """
     
     serializer_class = BookmarkSerializer
@@ -19,7 +19,7 @@ class BookmarkList(generics.ListCreateAPIView):
 
 class BookmarkDetail(generics.RetrieveDestroyAPIView):
     """
-    A view to retrieve and delete bookmarks
+    A view to retrieve and delete bookmarks.
     """
 
     serializer_class = BookmarkSerializer
