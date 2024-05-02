@@ -4,6 +4,11 @@ from posts.models import Post
 
 
 class Comment(models.Model):
+    """
+    Model for comments. One user can have many comments.
+    One post can have many comments.
+    """
+    
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     post = models.ForeignKey(Post, on_delete=models.CASCADE)
     content = models.TextField()

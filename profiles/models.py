@@ -4,6 +4,11 @@ from django.contrib.auth.models import User
 
 
 class Profile(models.Model):
+    """
+    Model for user profiles. One user can have one profile.
+    profile_image comes with a default value.
+    """
+
     owner = models.OneToOneField(User, on_delete=models.CASCADE)
     bio = models.TextField(blank=True)
     profile_image = models.ImageField(

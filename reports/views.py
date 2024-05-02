@@ -5,6 +5,10 @@ from .serializers import ReportSerializer
 
 
 class ReportList(generics.ListCreateAPIView):
+    """
+    A view to list and create reports
+    """
+
     serializer_class = ReportSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Report.objects.all()
@@ -21,6 +25,10 @@ class ReportList(generics.ListCreateAPIView):
 
 
 class ReportDetail(generics.RetrieveDestroyAPIView):
+    """
+    A view to retrieve and delete reports
+    """
+
     serializer_class = ReportSerializer
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Report.objects.all()

@@ -3,7 +3,12 @@ from django.contrib.auth.models import User
 from posts.models import Post
 
 
-class Report(models.Model):
+class Report(models.Model):  
+    """
+    Model for reporting a post. One post can have many reports.
+    report_reason comes with a default value.
+    """
+
     report_reason_choices = [
         ('offensive_content', 'Offensive Content'),
         ('foul_language', 'Foul Language'),

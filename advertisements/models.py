@@ -3,6 +3,11 @@ from django.contrib.auth.models import User
 
 
 class Advertisement(models.Model):
+    """
+    Model for advertisements. One user can have many advertisements.
+    availability and ad_image come with a default value.
+    """
+
     availability_choices = [
         ('available', 'Available'),
         ('not_available', 'Not Available'),

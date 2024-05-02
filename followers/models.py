@@ -3,6 +3,11 @@ from django.contrib.auth.models import User
 
 
 class Follower(models.Model):
+    """
+    Model for users to follow each other. One user can have many followers.
+    One user can follow many users.
+    """
+
     owner = models.ForeignKey(User, related_name='following', on_delete=models.CASCADE)
     followed = models.ForeignKey(User, related_name='followed', on_delete=models.CASCADE)
     created_on = models.DateTimeField(auto_now_add=True)

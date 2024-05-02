@@ -3,6 +3,11 @@ from django.contrib.auth.models import User
 
 
 class Post(models.Model):
+    """
+    Model for posts. One user can have many posts.
+    post_image comes with a default value.
+    """
+
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     title = models.CharField(max_length=255)
     content = models.TextField(blank=True)

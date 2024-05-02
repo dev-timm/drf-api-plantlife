@@ -5,6 +5,10 @@ from .serializers import BookmarkSerializer
 
 
 class BookmarkList(generics.ListCreateAPIView):
+    """
+    A view to list and create bookmarks
+    """
+    
     serializer_class = BookmarkSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Bookmark.objects.all()
@@ -14,6 +18,10 @@ class BookmarkList(generics.ListCreateAPIView):
 
 
 class BookmarkDetail(generics.RetrieveDestroyAPIView):
+    """
+    A view to retrieve and delete bookmarks
+    """
+
     serializer_class = BookmarkSerializer
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Bookmark.objects.all()

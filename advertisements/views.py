@@ -7,6 +7,10 @@ from .serializers import AdvertisementSerializer
 
 
 class AdvertisementList(generics.ListCreateAPIView):
+    """
+    A view to list and create advertisements
+    """
+
     serializer_class = AdvertisementSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
     queryset = Advertisement.objects.all()
@@ -34,6 +38,10 @@ class AdvertisementList(generics.ListCreateAPIView):
 
 
 class AdvertisementDetail(generics.RetrieveUpdateDestroyAPIView):
+    """
+    A view to retrieve, update and delete advertisements
+    """
+
     serializer_class = AdvertisementSerializer
     permission_classes = [IsOwnerOrReadOnly]
     queryset = Advertisement.objects.all()
